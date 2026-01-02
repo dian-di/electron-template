@@ -1,0 +1,90 @@
+.mini-window {
+  position: relative;
+  margin-left: 125px;
+  margin-top: 109px;
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  background: #fff;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  user-select: none;
+}
+
+.mini-window.expanded {
+  width: 160px;
+  height: 150px;
+  border-radius: 12px;
+  transform: translate(-110px, -100px);
+}
+
+.mini-window.expanded .mini-content {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.mini-window.expanded .expanded-content {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mini-content {
+  position: absolute;
+  bottom: 1px;
+  right: 5px;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.mini-bg {
+  cursor: pointer;
+  display: inline-block;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+}
+
+.expanded-content {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 160px;
+  height: 150px;
+  opacity: 0;
+  padding: 9px 12px;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.expanded-content .actions {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 8px;
+}
+
+.expanded-content .actions .action-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #409eff;
+}
+
+.expanded-content .actions .action-item .icon {
+  font-size: 18px;
+}
+
+.expanded-content .actions .action-item span:not(.icon) {
+  font-size: 14px;
+}
+
+.expanded-content .actions .action-item:hover {
+  background-color: rgba(64, 158, 255, 0.1);
+  transform: scale(1.06);
+  outline: 1px solid #409eff;
+}
